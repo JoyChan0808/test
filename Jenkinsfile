@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('test') {
       steps {
@@ -10,12 +10,12 @@ pipeline {
       parallel {
         stage('deploy') {
           steps {
-            sh 'echo "deploy 1"'
+            sh 'echo $name1'
           }
         }
         stage('deploy2') {
           steps {
-            sh 'echo "deploy2"'
+            sh 'echo $name2'
           }
         }
       }
@@ -30,5 +30,9 @@ pipeline {
         sh 'echo "bye"'
       }
     }
+  }
+  environment {
+    name1 = 'joy'
+    name2 = 'chan'
   }
 }
