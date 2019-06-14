@@ -10,12 +10,12 @@ pipeline {
       parallel {
         stage('deploy') {
           steps {
-            sh 'echo $name1'
+            sh "echo $name1"
           }
         }
         stage('deploy2') {
           steps {
-            sh 'echo $name2'
+            sh "echo $name2"
           }
         }
       }
