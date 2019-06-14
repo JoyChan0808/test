@@ -22,7 +22,8 @@ pipeline {
     }
     stage('final') {
       steps {
-        sh 'echo "final"'
+        sh '''echo "final"
+mkdir -p /data/test'''
       }
     }
     stage('next') {
