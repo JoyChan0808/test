@@ -25,5 +25,10 @@ pipeline {
         sh 'echo "final"'
       }
     }
+    stage('next') {
+      steps {
+        sh 'echo "bye"'
+      }
+    }
   }
 }
